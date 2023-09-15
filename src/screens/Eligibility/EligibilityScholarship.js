@@ -141,12 +141,12 @@ const EligibilityScholarship = (props) => {
             
     </ScrollView>
     <TouchableOpacity 
-          onPress={()=>{navigation.navigate("PlayQuiz")}}
+          onPress={()=>{navigation.navigate("OCR",{data:data})}}
           style={{
               marginTop:Utils.ScreenHeight(4),
               justifyContent:"center",alignSelf:'center',
               height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(55), backgroundColor:colors.primary, borderRadius:12}}>
-                  <Text style={{textAlign:"center", fontSize:Utils.ScreenHeight(1.5), color:colors.white, fontWeight:500}}>Take Quiz</Text>
+                  <Text style={{textAlign:"center", fontSize:Utils.ScreenHeight(1.5), color:colors.white, fontWeight:500}}>Continue to Application</Text>
             </TouchableOpacity>
         
     </SafeAreaView>

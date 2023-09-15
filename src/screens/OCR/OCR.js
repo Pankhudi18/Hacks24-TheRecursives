@@ -9,7 +9,9 @@ import DocumentPicker from 'react-native-document-picker';
 import { utils } from '@jest/reporters'
 import WebView from 'react-native-webview'
 
-const OCR = () => {
+const OCR = (props) => {
+    const{route} = props
+    const data = route?.params?.data;
     const navigation = useNavigation();
     const[summary,setsummary] = useState("");
     const[searchtext,setsearchtext] = useState("");
@@ -67,7 +69,7 @@ const OCR = () => {
             </View>
           ) : (
             <View>
-          
+
             <View style={{ flexDirection: "row",
              marginBottom:Utils.ScreenHeight(3),
              marginHorizontal: Utils.ScreenWidth(4), alignItems: "center",backgroundColor:colors.white,  }}>
@@ -79,6 +81,7 @@ const OCR = () => {
                     
                   
              </View>
+            <Text style={{marginHorizontal:Utils.ScreenWidth(2), alignSelf:"center", fontSize:Utils.ScreenHeight(1.8)}}>Upload your essay for applying for the scholarship</Text>
     
                        
                             
@@ -130,7 +133,7 @@ const OCR = () => {
         </TouchableOpacity>
         {takequiz&&
           <TouchableOpacity 
-          onPress={()=>{navigation.navigate("PlayQuiz")}}
+          onPress={()=>{navigation.navigate("PlayQuiz",{data:data, summary:summary})}}
           style={{
               marginTop:Utils.ScreenHeight(4),
               justifyContent:"center",alignSelf:'center',

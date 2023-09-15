@@ -1,4 +1,4 @@
-import { View, Text, StatusBar, Image, Modal, Dimensions } from 'react-native'
+import { View, Text, StatusBar, Image, Modal, Dimensions, Alert } from 'react-native'
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -7,10 +7,14 @@ import { Utils, colors } from '../../contants';
 import ImagesPath from '../../assests/ImagesPath';
 import { QuizData } from '../../contants/QuizData';
 import QuestionItem from './QuestionItem';
+import Helper from '../../Lib/Helper';
 
 
 
-const PlayQuiz = () => {
+const PlayQuiz = (props) => {
+    const{route} = props
+    const data = route?.params?.data;
+    const summary = route?.params?.summary;
     const navigation = useNavigation();
     const width = Dimensions.get('window').width;
     
@@ -59,6 +63,39 @@ const PlayQuiz = () => {
         })
         setQuestions(temp);
 
+    }
+
+    const submit=()=>{
+      
+        // showLoader(true)
+        
+        var myHeaders = new Headers();
+        const raw = {
+            "scholarship_title":data?.title,
+            "funding":data?.funds,
+            "file":"url",
+            "summary":summary
+        }
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw
+        };
+
+        fetch("https://nfc-backend-nyjt.onrender.com/api/applications", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            
+            console.log("response:",result._id)
+            Helper.setData("appnid", result._id)
+            alert("Application submitted")
+            navigation.navigate("ClientHomeScreen")
+        }
+        
+        )
+        .catch(error => console.log('error', error));
+        
     }
 
   return (
@@ -161,7 +198,7 @@ const PlayQuiz = () => {
                     <TouchableOpacity style={{
                         backgroundColor: 'green',
                         height: 50,
-                        width: 100,
+                        width: 200,
                         borderRadius: 10,
                         marginRight: 10,
                         justifyContent: 'center',
@@ -169,9 +206,9 @@ const PlayQuiz = () => {
 
 
                     }} onPress={() => {
-                        navigation.navigate("SubmitApplication")
+                      submit()
                     }}>
-                        <Text style={{ color: '#fff' }}> Submit</Text>
+                        <Text style={{ color: '#fff' }}> Submit Your Aplication</Text>
 
                     </TouchableOpacity>
 
