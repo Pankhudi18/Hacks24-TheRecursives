@@ -16,7 +16,7 @@ const Appli_scholarship = () => {
     )
   return (
     <SafeAreaView style = {{height: '100%', backgroundColor: colors.white}}>
-          <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" />
+        
           <View style = {{justifyContent: 'center', alignItems: 'center', height: Utils.ScreenHeight(6) }}>
              <Text style = {{fontWeight: 500, fontSize: 20, color: colors.black}}>My applications</Text>
         </View>
@@ -56,7 +56,7 @@ const Appli_scholarship = () => {
                 </View>
                 </View>
                 <View style = {{marginHorizontal: Utils.ScreenWidth(1)}}>
-                  <Image source={ImagesPath.home.right_arrow} style={{height:Utils.ScreenHeight(2), tint: colors.grey2, width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
+                  <Image source={ImagesPath.LegalBridge.scholar} style={{height:Utils.ScreenHeight(2), tint: colors.grey2, width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
                 </View>
           </TouchableOpacity>
           </View>
@@ -65,9 +65,9 @@ const Appli_scholarship = () => {
         <View style = {{backgroundColor: colors.primary, height: Utils.ScreenHeight(11.8), width: Utils.ScreenWidth(2), marginHorizontal: Utils.ScreenWidth(1.2), marginTop: Utils.ScreenHeight(1.8)}}/>
           <TouchableOpacity style={{marginTop:Utils.ScreenHeight(1.5), borderWidth:1, width: '96%', justifyContent:"space-between", height:Utils.ScreenHeight(12), 
                                  borderColor:colors.grey2, borderRadius:10, flexDirection:"row", alignItems:"center"}}
-          onPress={() => {navigation.navigate('')}}>
+          onPress={() => {navigation.navigate('ScholarshipDetails')}}>
                <View style={{flexDirection:"row", alignItems:"center", marginLeft:Utils.ScreenWidth(2) }}>
-                <Image source={ImagesPath.home.dollar_icon} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
+                <Image source={ImagesPath.LegalBridge.scholar} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
                 <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '80%'}}>
                 <Text style={{fontSize:17, fontWeight:"400", color: colors.black}}>The XYZ Scholarship</Text>
                 <Text style={{fontSize:12, fontWeight:"400", color: colors.grey2}}>Lorem ipsum dolor sit amet,kjdsbcousdbosbvob'DCSDNCNEKCNKISDNKLCN
@@ -84,9 +84,9 @@ const Appli_scholarship = () => {
         <View style = {{backgroundColor: colors.primary, height: Utils.ScreenHeight(11.8), width: Utils.ScreenWidth(2), marginHorizontal: Utils.ScreenWidth(1.2), marginTop: Utils.ScreenHeight(1.8)}}/>
           <TouchableOpacity style={{marginTop:Utils.ScreenHeight(1.5), borderWidth:1, width: '96%', justifyContent:"space-between", height:Utils.ScreenHeight(12), 
                                  borderColor:colors.grey2, borderRadius:10, flexDirection:"row", alignItems:"center"}}
-          onPress={() => {navigation.navigate('')}}>
+          onPress={() => {navigation.navigate('ScholarshipDetails')}}>
                <View style={{flexDirection:"row", alignItems:"center", marginLeft:Utils.ScreenWidth(2) }}>
-                <Image source={ImagesPath.home.dollar_icon} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
+                <Image source={ImagesPath.LegalBridge.scholar} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
                 <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '80%'}}>
                 <Text style={{fontSize:17, fontWeight:"400", color: colors.black}}>The XYZ Scholarship</Text>
                 <Text style={{fontSize:12, fontWeight:"400", color: colors.grey2}}>Lorem ipsum dolor sit amet,kjdsbcousdbosbvob'DCSDNCNEKCNKISDNKLCN
@@ -104,9 +104,9 @@ const Appli_scholarship = () => {
           ), marginHorizontal: Utils.ScreenWidth(1.2), marginTop: Utils.ScreenHeight(1.8)}}/>
           <TouchableOpacity style={{marginTop:Utils.ScreenHeight(1.5), borderWidth:1, width: '96%', justifyContent:"space-between", height:Utils.ScreenHeight(12), 
                                  borderColor:colors.grey2, borderRadius:10, flexDirection:"row", alignItems:"center"}}
-          onPress={() => {navigation.navigate('')}}>
+          onPress={() => {navigation.navigate('ScholarshipDetails')}}>
                <View style={{flexDirection:"row", alignItems:"center", marginLeft:Utils.ScreenWidth(2) }}>
-                <Image source={ImagesPath.home.dollar_icon} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
+                <Image source={ImagesPath.LegalBridge.scholar} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
                 <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '80%'}}>
                 <Text style={{fontSize:17, fontWeight:"400", color: colors.black}}>The XYZ Scholarship</Text>
                 <Text style={{fontSize:12, fontWeight:"400", color: colors.grey2}}>Lorem ipsum dolor sit amet,kjdsbcousdbosbvob'DCSDNCNEKCNKISDNKLCN

@@ -6,9 +6,10 @@ import ImagesPath from '../../assests/ImagesPath';
 import { Utils, colors } from '../../contants';
 import { FlatList } from 'react-native-gesture-handler';
 
-const EligibilityScholarship = () => {
+const EligibilityScholarship = (props) => {
+  const{route} = props
     const navigation = useNavigation();
-
+    const data = route?.params?.data;
     useLayoutEffect(()=>
     navigation.setOptions({
         headerShown: false,
@@ -86,7 +87,7 @@ const EligibilityScholarship = () => {
                           marginHorizontal: Utils.ScreenWidth(2),
                           marginBottom: Utils.ScreenHeight(2),
                           width: Utils.ScreenWidth(25),}}/>
-             <Text style = {{fontWeight: 500, fontSize: 20, color: colors.black}}>XYZ Scholarship</Text>
+             <Text style = {{fontWeight: 500, fontSize: 15, color: colors.black, maxWidth:"70%"}}>{data.title}</Text>
         </View>
 
             <ScrollView style = {{marginHorizontal: Utils.ScreenWidth(3)}}>
@@ -133,14 +134,20 @@ const EligibilityScholarship = () => {
 
         <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '100%'}}>
                         <Text style={{fontSize:20, fontWeight:"500", color: colors.black}}>Deadline</Text>
-                        <Text style={{fontSize:12, fontWeight:"400", color: colors.grey, marginTop: Utils.ScreenHeight(2)}}>Last date to register: 23rd October 2023</Text>
+                        <Text style={{fontSize:15, fontWeight:"400", color: colors.grey, marginTop: Utils.ScreenHeight(2)}}>Days Left : {data.days_until_deadline}</Text>
         </View>
         
-        <View style = {{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                        <View style = {{ backgroundColor: colors.primary, width: '90%', height: Utils.ScreenHeight(0.1), marginTop: Utils.ScreenHeight(0.5) }} />
-        </View>
+       
             
     </ScrollView>
+    <TouchableOpacity 
+          onPress={()=>{navigation.navigate("OCR",{data:data})}}
+          style={{
+              marginTop:Utils.ScreenHeight(4),
+              justifyContent:"center",alignSelf:'center',
+              height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(55), backgroundColor:colors.primary, borderRadius:12}}>
+                  <Text style={{textAlign:"center", fontSize:Utils.ScreenHeight(1.5), color:colors.white, fontWeight:500}}>Continue to Application</Text>
+            </TouchableOpacity>
         
     </SafeAreaView>
   )

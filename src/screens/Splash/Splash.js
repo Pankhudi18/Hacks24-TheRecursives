@@ -14,8 +14,8 @@ const Splash = () => {
     }, 3000);
   },[])
   return (
-    <SafeAreaView>
-    <View style={{height:"100%", alignItems:"center", justifyContent:"center"}}>
+    <SafeAreaView style={{backgroundColor:colors.white}}>
+    <View style={{height:"100%", alignItems:"center", justifyContent:"center", backgroundColor:colors.white}}>
       <Image source={ImagesPath.home.logo_primary} style={{
         resizeMode:"contain",
         height:Utils.ScreenHeight(35),

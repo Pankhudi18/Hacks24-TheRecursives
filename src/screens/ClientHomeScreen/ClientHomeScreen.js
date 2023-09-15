@@ -1,10 +1,11 @@
 import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Utils, colors } from '../../contants'
 import ImagesPath from '../../assests/ImagesPath'
 import { FlatList } from 'react-native-gesture-handler'
 import Navigation from '../../navigation/Navigation'
 import { useNavigation } from '@react-navigation/native'
+import axios from 'axios'
 
 const ClientHomeScreen = () => {
     const navigation = useNavigation();
@@ -18,20 +19,61 @@ const ClientHomeScreen = () => {
       
 
   ];
+  const[scholarship,setscholarship] = useState();
+  useEffect(()=>{
+    console.log("from useeffetc", scholarship);
+  },scholarship)
+  const getrecommendations = () => {
+
+    
+   
+   
+    
+    const body = {
+      "user_gpa":8,
+      "user_location":"india"
+    }
+
+    axios
+      .post('http://127.0.0.1:5000/api/recommend', body, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((response) => {
+        setscholarship(response.data.scholar)
+        console.log('API Response: idar hai', scholarship);
+
+        // setscholarship(response.data.recommended_scholarships[0])
+        // console.log(scholarship)
+        
+
+
+      })
+      .catch((error) => {
+        console.error('API Error:', error);
+      });
+  };
+  useEffect(() => {
+    // getPrescriptionList()
+    getrecommendations()
+}, [])
     const [searchText, setSearchtext] = useState("")
    
-    const latest = ({ item }) => {
+    const latest = ({ item, index }) => {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity 
+            onPress={()=>{navigation.navigate("EligibilityScholarship",{data:item})}}
+            >
                 <View style={{flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
                     <View>
-                        <Image source={item?.image}
-                            style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), resizeMode: "contain" }} />
+                        <Image source={ImagesPath.LegalBridge.scholar}
+                            style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), resizeMode: "contain" , marginRight:Utils.ScreenWidth(2)}} />
                     </View>
                     <View style={{flex:1, justifyContent:"space-evenly"}}>
-                        <Text style={{fontSize:12, color:colors.grey, fontWeight:300}}> {item.header} </Text>
+                        <Text style={{fontSize:12, color:colors.primarydark, fontWeight:800}}> {item.funds}  </Text>
                         <Text style={{fontSize:15, fontWeight:400}}> {item.title} </Text>
-                        <Text style={{fontSize:12, color:colors.grey, fontWeight:300}}>{item.duration} </Text>
+                        <Text style={{fontSize:12, color:colors.grey, fontWeight:300}}>{item.days_until_deadline} days remaning </Text>
                        
                     </View>
                 </View>
@@ -63,61 +105,27 @@ const ClientHomeScreen = () => {
 
                 <View style={{ marginTop: Utils.ScreenHeight(3), marginHorizontal:Utils.ScreenWidth(4)}}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Services </Text>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Quick Tabs</Text>
                         <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>View All</Text>
                     </View>
-                    <View style={{flexDirection:"row", justifyContent:"space-between", alignItems:"center"}}>
+                    
+                    <View style={{flexDirection:"row",marginTop:Utils.ScreenHeight(1), justifyContent:"space-between", alignItems:"center"}}>
                       <TouchableOpacity>
-                          <Image source={ImagesPath.LegalBridge.notary} style={{height:Utils.ScreenHeight(9),
+                          <Image source={ImagesPath.LegalBridge.schloarapplication} style={{height:Utils.ScreenHeight(8),
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
                       </TouchableOpacity>
                       <TouchableOpacity>
-                          <Image source={ImagesPath.LegalBridge.agreement} style={{height:Utils.ScreenHeight(9),
+                          <Image source={ImagesPath.LegalBridge.AIinterview} style={{height:Utils.ScreenHeight(8),
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
                       </TouchableOpacity>
-                    </View>
-                    <View style={{flexDirection:"row",marginTop:Utils.ScreenHeight(2), justifyContent:"space-between", alignItems:"center"}}>
-                      <TouchableOpacity>
-                          <Image source={ImagesPath.LegalBridge.certificates} style={{height:Utils.ScreenHeight(9),
-                            borderWidth:1,borderColor:colors.grey2, borderRadius:5,
-                            width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
-                      </TouchableOpacity>
-                      <TouchableOpacity>
-                          <Image source={ImagesPath.LegalBridge.legalcase} style={{height:Utils.ScreenHeight(9),
-                            borderWidth:1,borderColor:colors.grey2, borderRadius:5,
-                            width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
-                      </TouchableOpacity>
+                      
                     </View>
 
                 </View>
 
-                <View style={{marginTop:Utils.ScreenHeight(3)}}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Quick Tabs </Text>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>View All</Text>
-                    </View>
-                    <View style={{marginHorizontal:Utils.ScreenWidth(4),flexDirection:"row", justifyContent:"space-around", alignItems:"center"}}>
-                      <TouchableOpacity>
-                        <Image source={ImagesPath.LegalBridge.apply} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
-                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
-                        }}/>
-                      </TouchableOpacity>
-                      <TouchableOpacity
-                      onPress={()=>{navigation.navigate("CheckStatus")}}
-                      >
-                        <Image source={ImagesPath.LegalBridge.checkstatus} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
-                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
-                        }}/>
-                      </TouchableOpacity>
-                      <TouchableOpacity>
-                        <Image source={ImagesPath.LegalBridge.resumeapplication} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
-                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
-                        }}/>
-                      </TouchableOpacity>
-                    </View>
-                </View>
+              
                 <View style={{
                   marginTop:Utils.ScreenHeight(3),
                   borderWidth:0.5,borderColor:colors.grey2, borderRadius:12,
@@ -131,8 +139,8 @@ const ClientHomeScreen = () => {
                 </View>
 
                 <View>
-                  <Text style={{fontSize:Utils.ScreenHeight(1.8),fontWeight:450}}>TODAY'S APPOINMENT</Text>
-                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5)}}>Appoinment with {'\n'}Mr Vishesh Gatha</Text>
+                  <Text style={{fontSize:Utils.ScreenHeight(1.8),fontWeight:450}}>TODAY'S INTERVIEW</Text>
+                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5)}}>Interview with {'\n'}Mr Mukesh Ambani</Text>
                   <TouchableOpacity 
                   onPress={()=>{navigation.navigate("VideoCall")}}
                   style={{alignSelf:"center", marginTop:Utils.ScreenHeight(1)
@@ -147,12 +155,13 @@ const ClientHomeScreen = () => {
                 </View>
                 <View style={{ marginTop: Utils.ScreenHeight(3),marginHorizontal: Utils.ScreenWidth(4) }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Explore</Text>
+                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Recommendations</Text>
 
                     </View>
                     <FlatList
 
-                        data={latestdata} renderItem={latest} />
+                        data={scholarship} renderItem={latest} />
+
                 </View>
 
 

@@ -15,9 +15,9 @@ const ScholarshipDetails = () => {
     })
     )
   return (
-    <SafeAreaView style = {{height: '100%', backgroundColor: colors.white}}>
-         <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" />
-          <View style = {{justifyContent: 'space', alignItems: 'center', height: Utils.ScreenHeight(6), marginTop: Utils.ScreenHeight(824), flexDirection: 'row', }}>
+    <SafeAreaView style={{height:Utils.ScreenHeight(100), backgroundColor:colors.white, paddingTop:Utils.ScreenHeight(3)}}>
+         {/* <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" /> */}
+          <View style = {{justifyContent: 'space', alignItems: 'center', height: Utils.ScreenHeight(6), flexDirection: 'row'}}>
             <Image source={ImagesPath.home.scholarship} 
                           style={{
                           resizeMode: 'contain',
