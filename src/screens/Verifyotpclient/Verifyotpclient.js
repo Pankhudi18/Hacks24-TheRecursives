@@ -281,8 +281,8 @@ function OtpScreenclient(props) {
                             activeOpacity={0.5}
                             onPress={() => 
                                 // {navigation.navigate("H")}
-                                // {navigation.navigate("TabNavigator")}
-                                otpInApi()
+                                {navigation.navigate("Register")}
+                                // otpInApi()
                             }
                             style={{ flexDirection: 'row', justifyContent: 'center', width: Utils.ScreenWidth(90), backgroundColor: colors.primary, height: Utils.ScreenHeight(7), borderRadius: 13 }}>
                             <View style={[styles.titleViewCss, { width: Utils.ScreenWidth(45) }]}>

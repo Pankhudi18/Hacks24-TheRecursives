@@ -16,12 +16,12 @@ import test from '../screens/test/test';
 import LawyerDetails from '../screens/LawyerDetails/LawyerDetails';
 import BookAppoinment from '../screens/BookAppoinment/BookAppoinment';
 import OCR from '../screens/OCR/OCR';
-import QuizSelect from '../screens/Quizes/QuizSelect';
-import PlayQuiz from '../screens/Quizes/PlayQuiz';
-import Appli_scholarship from '../screens/ApplicationStatus/Appli_scholarship';
-import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
+import Register from '../screens/Register/Register';
+import AcademicDetails from '../screens/AcademicDetails/AcademicDetails';
+import Uploadfiles from '../screens/Uploadfiles/Uploadfiles';
 import EligibilityScholarship from '../screens/Eligibility/EligibilityScholarship';
-import financialAid from '../screens/FinancialAid/financialAid';
+import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
+
 
 
 
@@ -38,32 +38,22 @@ function Navigation() {
                 initialRouteName="EligibilityScholarship"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
+                 <Stack.Screen name="AcademicDetails" component={AcademicDetails} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
-                <Stack.Screen name = "QuizSelect" component = {QuizSelect}/>
-                <Stack.Screen name = "PlayQuiz" component = {PlayQuiz}/>
-                <Stack.Screen name = "Appli_scholarship" component = {Appli_scholarship}/>
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="ScholarshipDetails" component={ScholarshipDetails} />
                 <Stack.Screen name="EligibilityScholarship" component= {EligibilityScholarship}/>
-                <Stack.Screen name="financialAid" component= {financialAid}/>
+                {/* <Stack.Screen name="financialAid" component= {financialAid}/> */}
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
-
-
-
-
                 <Stack.Screen name="VideoCall" component={VideoCall} />
-
-
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
-
                 <Stack.Screen name="test" component={test} />
+                <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
-                
-                
-
                 {/* Client screens */}
                 <Stack.Screen name="Loginclient" component={Loginclient} />
+                <Stack.Screen name="Uploadfiles" component={Uploadfiles} />
                 <Stack.Screen name="Signupclient" component={Signupclient} />
                 <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
                 <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
