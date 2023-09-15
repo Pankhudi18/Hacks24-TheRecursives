@@ -35,7 +35,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="EligibilityScholarship"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
