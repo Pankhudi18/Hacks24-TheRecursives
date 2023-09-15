@@ -89,7 +89,7 @@ const ImagesPath = {
         eclipse: require('./images/home/Eclipse.jpeg'),
         soundwaves: require('./images/home/soundwaves.png'),
         micred: require('./images/home/micred.png'),
-        logo_primary: require('./images/onboarding/logo1.png'),
+        logo_primary: require('./images/LegalBridge/primarylogo.jpeg'),
         download: require('./images/home/download_new.png'),
         Search_primary: require('./images/home/Search_primary.png'),
         calender: require('./images/home/calender_home.png'),
@@ -118,10 +118,16 @@ const ImagesPath = {
         consentForm : require('./images/home/consentForm.png'),
         star : require('./images/home/star.png'),
         drug : require('./images/home/drug.jpg'),
+<<<<<<< HEAD
         rickRoll: require('./images/home/rick.mp4'),
         firstQuestion: require('./images/home/first_question.mp4'),
         secondQuestion: require('./images/home/second_question.mp4'),
         thirdQuestion: require('./images/home/third_question.mp4'),
+=======
+        pending : require('./images/home/pending.jpg'),
+        scholarship: require('./images/home/Scholarship1.png'),
+        // selected : require('./images/home/selected.jpg'),
+>>>>>>> 138f3169f3f5287a1b7700fa3f1106878012c98d
     },
     earning:{
         sortBy_icon: require('./images/earning/SortBy_icon.png'),
@@ -182,7 +188,7 @@ const ImagesPath = {
         search: require('./images/LegalBridge/search.png'),
         court1: require('./images/LegalBridge/court1.png'),
         court2: require('./images/LegalBridge/court2.png'),
-        intro: require('./images/LegalBridge/lawyer.png'),
+        intro: require('./images/LegalBridge/intro.jpeg'),
         intro2: require('./images/LegalBridge/lawyer2.png'),
         captcha: require('./images/LegalBridge/captcha.png'),
         legalcase: require('./images/LegalBridge/legalcase.png'),
@@ -202,6 +208,9 @@ const ImagesPath = {
         c6: require('./images/LegalBridge/c6.png'),
         c6: require('./images/LegalBridge/c6.png'),
         Icon: require('./images/LegalBridge/Icon.png'),
+        schloarapplication: require('./images/LegalBridge/schloarapplication.png'),
+        AIinterview: require('./images/LegalBridge/AIinterview.png'),
+        scholar: require('./images/LegalBridge/scholar.jpeg'),
 
 
     }

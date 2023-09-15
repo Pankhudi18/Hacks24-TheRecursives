@@ -14,6 +14,7 @@ import ClientSearchScreen from '../screens/ClientSearchScreen/ClientSearchScreen
 import ClientProfileScreen from '../screens/ClientProfileScreen/ClientProfileScreen';
 import Prepare from '../screens/Prepare/Prepare';
 import Track from '../screens/Track/Track';
+import Appli_scholarship from '../screens/ApplicationStatus/Appli_scholarship';
 
 
 
@@ -64,14 +65,14 @@ function ClientTabNavigator() {
              
             }}>
             <Tab.Screen
-
+                // Financial aid
                 name="ClientHomeScreen"
                 component={ClientHomeScreen}
                 options={{
                     headerTitle: "",
                 headerLeft: (title) => {
                     return (
-                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>LegalBridge</Text>
+                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Scholify!!</Text>
                     )
                 },
                 headerRight: () => {
@@ -183,8 +184,8 @@ function ClientTabNavigator() {
                 }}
             />
             <Tab.Screen
-                name="Track"
-                component={Track}
+                name="My Applications"
+                component={Appli_scholarship}
                 options={{
                     headerTitle: "",
                 headerLeft: (title) => {
@@ -226,12 +227,12 @@ function ClientTabNavigator() {
                     )
                 },
                     headerShown: true,
-                    tabBarLabel: '',
+                    tabBarLabel: 'My Applications',
                     
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIconcenter
-                                title="Track"
+                                title="My Applications"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.LegalBridge.chat}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -247,7 +248,7 @@ function ClientTabNavigator() {
                 options={{
                     headerLeft: (title) => {
                         return (
-                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Prepare</Text>
+                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Courses</Text>
                         )
                     },
                     headerRight: () => {
@@ -288,9 +289,9 @@ function ClientTabNavigator() {
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                                title="Prepare"
+                                title="Courses"
                                 isFocused={focused}
-                                activeIcon={ImagesPath.home.man_icon}
+                                activeIcon={ImagesPath.LegalBridge.courses}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
                             // title={"Katlego"}
                             />
