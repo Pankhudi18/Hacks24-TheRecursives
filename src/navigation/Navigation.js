@@ -22,7 +22,8 @@ import Uploadfiles from '../screens/Uploadfiles/Uploadfiles';
 import EligibilityScholarship from '../screens/Eligibility/EligibilityScholarship';
 import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
 import PlayQuiz from '../screens/Quizes/PlayQuiz';
-import SubmitApplication from '../screens/SubmitApplication/SubmitApplication';
+
+
 
 
 
@@ -43,10 +44,10 @@ function Navigation() {
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="ScholarshipDetails" component={ScholarshipDetails} />
                 <Stack.Screen name="EligibilityScholarship" component= {EligibilityScholarship}/>
+                {/* <Stack.Screen name="financialAid" component= {financialAid}/> */}
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
-                <Stack.Screen name="SubmitApplication" component={SubmitApplication} />
                 <Stack.Screen name="test" component={test} />
                 <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen

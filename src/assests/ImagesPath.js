@@ -203,7 +203,6 @@ const ImagesPath = {
         schloarapplication: require('./images/LegalBridge/schloarapplication.png'),
         AIinterview: require('./images/LegalBridge/AIinterview.png'),
         scholar: require('./images/LegalBridge/scholar.jpeg'),
-        courses: require('./images/LegalBridge/courses.png'),
 
 
     }
