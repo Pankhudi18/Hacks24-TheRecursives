@@ -169,7 +169,7 @@ const PlayQuiz = () => {
 
 
                     }} onPress={() => {
-                        setModalVisible(true)
+                        navigation.navigate("SubmitApplication")
                     }}>
                         <Text style={{ color: '#fff' }}> Submit</Text>
 
@@ -205,7 +205,7 @@ const PlayQuiz = () => {
 
 
             </View>
-            <Modal
+            {/* <Modal
                 animationType="slide"
                 transparent={true}
                 visible={modalVisible}
@@ -260,27 +260,8 @@ const PlayQuiz = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </Modal>
-            <View className="absolute bottom-0 left-0 space-x-14  bg-white w-full pt-2 pl-12  flex-row  h-20">
-    
-    <TouchableOpacity className="flex items-center" 
-    onPress={()=>{navigation.navigate("")}}>
-      <Text>Home</Text>
-    </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("")}}>
-    
-      <Text>Games</Text>
-    </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("")}}>
-      <Text>For You</Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={()=>{navigation.navigate("")}}
-    className="flex items-center">
-      
-      <Text>Profile</Text>
-    </TouchableOpacity>
-
-    </View>
+            </Modal> */}
+          
      </ScrollView>
     </SafeAreaView>
   )

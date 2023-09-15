@@ -62,7 +62,9 @@ const ClientHomeScreen = () => {
    
     const latest = ({ item, index }) => {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity 
+            onPress={()=>{navigation.navigate("EligibilityScholarship",{data:item})}}
+            >
                 <View style={{flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
                     <View>
                         <Image source={ImagesPath.LegalBridge.scholar}

@@ -21,6 +21,8 @@ import AcademicDetails from '../screens/AcademicDetails/AcademicDetails';
 import Uploadfiles from '../screens/Uploadfiles/Uploadfiles';
 import EligibilityScholarship from '../screens/Eligibility/EligibilityScholarship';
 import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
+import PlayQuiz from '../screens/Quizes/PlayQuiz';
+import SubmitApplication from '../screens/SubmitApplication/SubmitApplication';
 
 
 
@@ -33,7 +35,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="EligibilityScholarship"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                  <Stack.Screen name="AcademicDetails" component={AcademicDetails} />
@@ -44,6 +46,7 @@ function Navigation() {
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
+                <Stack.Screen name="SubmitApplication" component={SubmitApplication} />
                 <Stack.Screen name="test" component={test} />
                 <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen
@@ -56,6 +59,7 @@ function Navigation() {
                 <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
                 <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
                 <Stack.Screen name="OCR" component={OCR} />
+                <Stack.Screen name="PlayQuiz" component={PlayQuiz} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />
