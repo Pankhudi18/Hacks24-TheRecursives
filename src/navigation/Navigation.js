@@ -21,6 +21,7 @@ import PlayQuiz from '../screens/Quizes/PlayQuiz';
 import Appli_scholarship from '../screens/ApplicationStatus/Appli_scholarship';
 import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
 import EligibilityScholarship from '../screens/Eligibility/EligibilityScholarship';
+import financialAid from '../screens/FinancialAid/financialAid';
 
 
 
@@ -44,6 +45,7 @@ function Navigation() {
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="ScholarshipDetails" component={ScholarshipDetails} />
                 <Stack.Screen name="EligibilityScholarship" component= {EligibilityScholarship}/>
+                <Stack.Screen name="financialAid" component= {financialAid}/>
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
 
 
