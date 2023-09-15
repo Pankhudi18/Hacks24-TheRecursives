@@ -17,31 +17,37 @@ const EligibilityScholarship = () => {
 
     const bulletPoints = [
         "Belong to the minority community (Muslims, Sikhs, Christians, Buddhists, Jains, and Zoroastrians/Parsis)",
-        "Be studying in Class 1 to 10 in India in a government or private school including residential Government institutes.",
+        "Be studying in Class 1 to 10 in India in a government or private school including residential Government institutes and eligible private institutes selected and notified in a transparent manner by the concerned State Government and Union Territory Administration",
         "Have secured at least 50% marks in the previous final examination",
         "Have a family income of not more than INR 1 lakh per annum from all sources",
       ];
 
       const requiredDocuments = [
-       "Essay for admission",
-       "Income certificate issued by the competent authority in the State/UT Government",
-       "Verification Form to be provided by the institution",
-       "Income certificate issued by the competent authority in the State/UT Government",
+        "Students' passport-size photograph",
+        "Residential/domicile certificate",
+        "Verification Form to be provided by the institution",
+        "Fee receipt of the current course year",
+        "Income certificate issued by the competent authority in the State/UT Government",
+        "A self-certified community certificate from the applicant who has attained 18 years of age (Note - For minors/below 18 years of age the community certificate certified by a parent/guardian is required.)",
+        "Self-attested marksheet indicating that the applicant has secured not less than 50% marks in the last qualifying exam at a higher secondary/graduation level",
+        "Bank account number of the student with the IFSC Code of the bank branch (Note - The students who do not have their own bank account, parents/guardian can provide their own account details).",
+        "Aadhaar number of the student and if Aadhaar is not available then bonafide student certificate from the school/institute and scanned copies of bank passbook and Aadhaar enrolment ID (if applied for Aadhaar)",
+        "Bonafide student certificate from School/Institute (Note - If school/institute is located in a State/UT different from the domicile State/UT of the applicant)",
       ];
 
       const renderItem = ({ item }) => (
-        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), borderRadius: 8,}}>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1.5), marginTop: Utils.ScreenHeight(1.5) }}>{'\u2022'}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(2), marginTop: Utils.ScreenHeight(2)}}>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), marginTop: Utils.ScreenHeight(1) }}>{'\u2022'}</Text>
           <View style ={{marginRight: Utils.ScreenWidth(2)}}>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), maxWidth: '96%', marginTop: Utils.ScreenHeight(1.5),marginBottom: Utils.ScreenHeight(1.5) }}>{item}</Text>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), marginTop: Utils.ScreenHeight(1) }}>{item}</Text>
           </View>
         </View>
       );
 
       const renderItemm = ({ item }) => (
-        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), borderRadius: 8,}}>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1.5), marginTop: Utils.ScreenHeight(1.5) }}>{'\u2022'}</Text>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), maxWidth: '94%', marginTop: Utils.ScreenHeight(1.5),marginBottom: Utils.ScreenHeight(1.5) }}>{item}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+          <Text style={{ fontSize: 12, fontWeight: '400', color: colors.grey, marginTop: 5 }}>{'\u2022'}</Text>
+          <Text style={{ fontSize: 12, fontWeight: '400', color: colors.grey, marginTop: 5, marginLeft: 5 }}>{item}</Text>
         </View>
       );
       
@@ -97,8 +103,7 @@ const EligibilityScholarship = () => {
                     <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '100%'}}>
                         <Text style={{fontSize:20, fontWeight:"500", color: colors.black}}>Eligibility</Text>
                     </View>
-
-         <View style = {{marginBottom: Utils.ScreenHeight(2), marginTop: Utils.ScreenHeight(1)}}>
+         <View>
             <FlatList
                 data={bulletPoints}
                 renderItem={renderItem}
@@ -123,26 +128,17 @@ const EligibilityScholarship = () => {
         </View>
 
         <View style = {{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                        <View style = {{ backgroundColor: colors.primary, width: '90%', height: Utils.ScreenHeight(0.1), marginTop: Utils.ScreenHeight(2) }} />
+                        <View style = {{ backgroundColor: colors.primary, width: '90%', height: Utils.ScreenHeight(0.1), marginTop: Utils.ScreenHeight(0.5) }} />
         </View>
 
         <View style={{marginTop:Utils.ScreenWidth(4), marginHorizontal: Utils.ScreenWidth(2), marginBottom:Utils.ScreenWidth(4), maxWidth: '100%'}}>
                         <Text style={{fontSize:20, fontWeight:"500", color: colors.black}}>Deadline</Text>
-                        <Text style={{fontSize:16, fontWeight:"400", color: colors.grey, marginTop: Utils.ScreenHeight(2)}}>Last date to register: 23rd October 2023</Text>
+                        <Text style={{fontSize:12, fontWeight:"400", color: colors.grey, marginTop: Utils.ScreenHeight(2)}}>Last date to register: 23rd October 2023</Text>
         </View>
         
-        <View style = {{ alignItems: 'center', marginTop: Utils.ScreenHeight(3), marginBottom: Utils.ScreenHeight(2)}}>
-            <TouchableOpacity style = {{ backgroundColor: colors.primary,  
-                                         borderRadius: 30,
-                                         alignItems: 'center',
-                                         justifyContent: 'center',
-                                         height: Utils.ScreenHeight(7), 
-                                         width: '92%'}} onPress = {() => {navigation.navigate('')}}>
-               <Text style = {{ color: colors.white, fontWeight: 500, fontSize: 16}}>
-                Apply Now
-               </Text>
-            </TouchableOpacity>
-          </View>
+        <View style = {{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <View style = {{ backgroundColor: colors.primary, width: '90%', height: Utils.ScreenHeight(0.1), marginTop: Utils.ScreenHeight(0.5) }} />
+        </View>
             
     </ScrollView>
         
