@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import DocumentPicker from 'react-native-document-picker'; // For selecting documents (PDFs, images, etc.)
 import axios from "axios"
 import { colors } from '../../contants';
+import Helper from '../../Lib/Helper';
+import { useNavigation } from '@react-navigation/native';
 
 // import IPFS from 'ipfs-http-client';
 
@@ -12,7 +14,7 @@ const Uploadtoipfs = () => {
   const [uploadedCID, setUploadedCID] = useState(null);
 
   
-
+  const navigation = useNavigation();
   const pinFileToIPFS = async () => {
     const formData = new FormData();
     const result = await DocumentPicker.pick({
@@ -37,7 +39,7 @@ const Uploadtoipfs = () => {
     });
 
     
-
+    
 
 
     try{
@@ -50,6 +52,8 @@ const Uploadtoipfs = () => {
         }
       });
       console.log(res.data);
+      Helper.setData("aadhar", res.data);
+      navigation.navigate("ClientTabNavigator")
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +73,7 @@ const Uploadtoipfs = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+   
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,

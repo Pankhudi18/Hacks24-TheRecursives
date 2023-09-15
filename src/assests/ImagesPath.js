@@ -88,7 +88,7 @@ const ImagesPath = {
         eclipse: require('./images/home/Eclipse.jpeg'),
         soundwaves: require('./images/home/soundwaves.png'),
         micred: require('./images/home/micred.png'),
-        logo_primary: require('./images/onboarding/logo1.png'),
+        logo_primary: require('./images/LegalBridge/primarylogo.jpeg'),
         download: require('./images/home/download_new.png'),
         Search_primary: require('./images/home/Search_primary.png'),
         calender: require('./images/home/calender_home.png'),
@@ -180,7 +180,7 @@ const ImagesPath = {
         search: require('./images/LegalBridge/search.png'),
         court1: require('./images/LegalBridge/court1.png'),
         court2: require('./images/LegalBridge/court2.png'),
-        intro: require('./images/LegalBridge/lawyer.png'),
+        intro: require('./images/LegalBridge/intro.jpeg'),
         intro2: require('./images/LegalBridge/lawyer2.png'),
         captcha: require('./images/LegalBridge/captcha.png'),
         legalcase: require('./images/LegalBridge/legalcase.png'),
@@ -200,6 +200,9 @@ const ImagesPath = {
         c6: require('./images/LegalBridge/c6.png'),
         c6: require('./images/LegalBridge/c6.png'),
         Icon: require('./images/LegalBridge/Icon.png'),
+        schloarapplication: require('./images/LegalBridge/schloarapplication.png'),
+        AIinterview: require('./images/LegalBridge/AIinterview.png'),
+        scholar: require('./images/LegalBridge/scholar.jpeg'),
 
 
     }
