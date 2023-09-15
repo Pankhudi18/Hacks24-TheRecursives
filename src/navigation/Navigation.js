@@ -44,15 +44,8 @@ function Navigation() {
 
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
-
-
-
-
                 <Stack.Screen name="VideoCall" component={VideoCall} />
-
-
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
-
                 <Stack.Screen name="test" component={test} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
