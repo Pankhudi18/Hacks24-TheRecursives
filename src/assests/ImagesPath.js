@@ -116,7 +116,10 @@ const ImagesPath = {
         share_invoice: require('./images/home/share_invoice.png'),
         consentForm : require('./images/home/consentForm.png'),
         star : require('./images/home/star.png'),
-        drug : require('./images/home/drug.jpg')
+        drug : require('./images/home/drug.jpg'),
+        pending : require('./images/home/pending.jpg'),
+        scholarship: require('./images/home/Scholarship1.png'),
+        // selected : require('./images/home/selected.jpg'),
     },
     earning:{
         sortBy_icon: require('./images/earning/SortBy_icon.png'),
