@@ -1,13 +1,53 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
-import { TextInput } from 'react-native-gesture-handler'
+import React, { useEffect, useState } from 'react'
+import { FlatList, TextInput } from 'react-native-gesture-handler'
 import { Utils, colors } from '../../contants'
 import ImagesPath from '../../assests/ImagesPath'
 import { useNavigation } from '@react-navigation/native'
 
 const ClientSearchScreen = () => {
+  const latest = ({ item, index }) => {
+    return (
+        <TouchableOpacity 
+        onPress={()=>{navigation.navigate("EligibilityScholarship",{data:item})}}
+        >
+            <View style={{
+              borderBottomWidth:1, borderBlockColor:colors.grey2,paddingBottom:Utils.ScreenHeight(0.5),
+              flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
+                <View>
+                    <Image source={ImagesPath.LegalBridge.schoimg}
+                        style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), resizeMode: "contain" , marginRight:Utils.ScreenWidth(2)}} />
+                </View>
+                <View style={{flex:1, justifyContent:"space-evenly"}}>
+                    <Text style={{fontSize:12, color:colors.primarydark, fontWeight:800}}>{item.attributes.grant} </Text>
+                    <Text style={{fontSize:14, fontWeight:400, color: colors.black}}> {item.attributes.name} </Text>
+                    <Text style={{fontSize:12, color:colors.grey, fontWeight:300, maxHeight:Utils.ScreenHeight(5)}}> {item.attributes.description} days remaning </Text>
+                   
+                </View>
+            </View>
+
+        </TouchableOpacity>
+    )
+}
   const[searchtext,setSearchtext] = useState();
   const navigation = useNavigation()
+  const[data,setdat] = useState([]);
+  useEffect(() => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+    fetch("https://ssp-content-prod.herokuapp.com/api/scholarships?filters%5B%24or%5D%5B0%5D%5Bdeadline%5D%5B%24gt%5D=2023-09-15&filters%5B%24or%5D%5B1%5D%5Bdeadline%5D%5B%24null%5D=true&filters%5Blocations%5D%5Bid%5D%5B%24in%5D%5B0%5D=107&filters%5Blocations%5D%5Bid%5D%5B%24in%5D%5B1%5D=2&filters%5Blocations%5D%5Bid%5D%5B%24in%5D%5B2%5D=7&populate%5B0%5D=organisation&populate%5B1%5D=scholarship_degrees&sort%5Bfirst_published_at%5D=desc&pagination%5Bpage%5D=3&pagination%5BpageSize%5D=15", requestOptions)
+      .then(response => response.json())
+      .then(result => {console.log(result.data)
+
+        setdat(result.data)
+      
+      })
+      .catch(error => console.log('error', error));
+  }, [])
+  
   return (
     <View style={{height:Utils.ScreenHeight(100), backgroundColor:colors.white}}>  
         <View style={{
@@ -30,7 +70,7 @@ const ClientSearchScreen = () => {
 
                 </View>
 
-                <View style={{marginTop:Utils.ScreenHeight(3),marginHorizontal:Utils.ScreenWidth(5)}}>
+                {/* <View style={{marginTop:Utils.ScreenHeight(3),marginHorizontal:Utils.ScreenWidth(5)}}>
                  
                   <View style={{flexDirection:"row", 
                   justifyContent:"space-evenly",marginTop:Utils.ScreenHeight(1),
@@ -96,7 +136,18 @@ const ClientSearchScreen = () => {
                   </View>
 
 
+                </View> */}
+                <View style={{marginHorizontal:Utils.ScreenWidth(4), marginTop:Utils.ScreenHeight(3)}}>
+                <FlatList
+                data={data}
+                renderItem={latest}
+                showsVerticalScrollIndicator={false}
+                ListFooterComponent={<View style={{height:Utils.ScreenHeight(40)}}></View>}
+                />
+
                 </View>
+
+
     </View>
   )
 }

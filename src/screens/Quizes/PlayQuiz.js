@@ -172,7 +172,7 @@ const PlayQuiz = (props) => {
             }}>
                 <TouchableOpacity
                 style={{
-                    backgroundColor: 'purple',
+                    backgroundColor: colors.primary,
                     height: 50,
                     width: 100,
                     borderRadius: 10,
@@ -215,7 +215,7 @@ const PlayQuiz = (props) => {
                 ) : (
                     <TouchableOpacity
         style={{
-            backgroundColor: 'purple',
+            backgroundColor: colors.primary,
             height: 50,
             width: 100,
             borderRadius: 10,

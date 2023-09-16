@@ -1,6 +1,6 @@
 export const QuizData = [
     {
-        question: 'The electronic configuration of an element is found to be 2, 4. How many bonds can one carbon atom form in a compound?',
+        question: 'How is the 3rd element in an array accessed based on pointer notation?',
         Options: ['1','2','4','6'],
         correct: 1,
         marked: -1,

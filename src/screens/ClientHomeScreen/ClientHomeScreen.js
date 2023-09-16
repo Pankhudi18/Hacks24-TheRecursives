@@ -67,7 +67,7 @@ const ClientHomeScreen = () => {
             >
                 <View style={{flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
                     <View>
-                        <Image source={ImagesPath.LegalBridge.scholar}
+                        <Image source={ImagesPath.LegalBridge.schoimg}
                             style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), borderRadius: 8, resizeMode: "contain" , marginRight:Utils.ScreenWidth(2)}} />
                     </View>
                     <View style={{flex:1, justifyContent:"space-evenly"}}>
