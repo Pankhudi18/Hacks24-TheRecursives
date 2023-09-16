@@ -85,6 +85,7 @@ const ImagesPath = {
         add_artic: require('./images/home/add_artic.png'),
         doctor_pic: require('./images/home/doctor_girl.jpeg'),
         micPres: require('./images/home/micPres.jpeg'),
+        microphone: require('./images/home/microphone.png'),
         eclipse: require('./images/home/Eclipse.jpeg'),
         soundwaves: require('./images/home/soundwaves.png'),
         micred: require('./images/home/micred.png'),
@@ -117,9 +118,16 @@ const ImagesPath = {
         consentForm : require('./images/home/consentForm.png'),
         star : require('./images/home/star.png'),
         drug : require('./images/home/drug.jpg'),
+<<<<<<< HEAD
+        rickRoll: require('./images/home/rick.mp4'),
+        firstQuestion: require('./images/home/first_question.mp4'),
+        secondQuestion: require('./images/home/second_question.mp4'),
+        thirdQuestion: require('./images/home/third_question.mp4'),
+=======
         pending : require('./images/home/pending.jpg'),
         scholarship: require('./images/home/Scholarship1.png'),
-        loan : require('./images/home/loan2.jpg'),
+        // selected : require('./images/home/selected.jpg'),
+>>>>>>> 138f3169f3f5287a1b7700fa3f1106878012c98d
     },
     earning:{
         sortBy_icon: require('./images/earning/SortBy_icon.png'),
