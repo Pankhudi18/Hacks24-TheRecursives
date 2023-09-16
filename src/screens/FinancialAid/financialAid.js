@@ -46,10 +46,10 @@ const financialAid = () => {
     
 <ScrollView style = {{marginHorizontal: Utils.ScreenWidth(4)}}>
 
-<View>
-    <Image source={ImagesPath.home.loan2} style = {{height: Utils.ScreenHeight(60), width: '100%'}}/>
+<View style = {{height: Utils.ScreenHeight(8), width: '100%', resizeMode: 'contain'}}>
+    <Image source={ImagesPath.home.loan} style = {{height: Utils.ScreenHeight(60), width: '100%'}}/>
     </View>
-    
+  <View>
     <TouchableOpacity style={{ marginTop: Utils.ScreenHeight(0), borderWidth: 1, width: '100%', justifyContent: "space-between", height: Utils.ScreenHeight(12), borderColor: colors.grey2, borderRadius: 10, flexDirection: "row", alignItems: "center" }} onPress={() => { navigation.navigate('') }}>
       <View style={{ flexDirection: "row", alignItems: "center", marginLeft: Utils.ScreenWidth(2) }}>
         <Image source={ImagesPath.home.dollar_icon} style={{ height: Utils.ScreenHeight(6), width: Utils.ScreenWidth(14), resizeMode: "contain" }} />
@@ -62,6 +62,7 @@ const financialAid = () => {
         <Image source={ImagesPath.home.right_arrow} style={{ height: Utils.ScreenHeight(2), tintColor: colors.grey2, width: Utils.ScreenWidth(14), resizeMode: "contain" }} />
       </View>
     </TouchableOpacity>
+    </View>
   </ScrollView>
     </SafeAreaView>
   )

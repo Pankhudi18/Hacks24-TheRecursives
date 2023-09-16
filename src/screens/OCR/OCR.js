@@ -37,7 +37,7 @@ const OCR = (props) => {
         formData.append('search_word', "agrees");
         setloader(true)
         axios
-          .post('http://127.0.0.1:5000/api/ocr', formData, {
+          .post('https://3968-203-212-25-251.ngrok-free.app/api/ocr', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

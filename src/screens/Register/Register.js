@@ -105,28 +105,29 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
         contentContainerStyle={{ flexGrow: 1 }}>
         <View style={{ justifyContent: 'center', alignItems: 'center', height: Utils.ScreenHeight(8) }}>
           <Image source={ImagesPath.home.logo_primary}
-            style={{ width: Utils.ScreenWidth(24), height: Utils.ScreenHeight(10), resizeMode: "contain" }} />
+            style={{ width: Utils.ScreenWidth(38), height: Utils.ScreenHeight(16), resizeMode: "contain" }} />
         </View>
         <TouchableOpacity activeOpacity={0.3}
-          style={{
-            marginLeft: Utils.ScreenWidth(3),
-            alignItems: 'center',
-            elevation: 7,
-            backgroundColor: '#fff',
-            borderRadius: 8,
-            justifyContent: 'center', bottom: 50,
-            width: Utils.ScreenWidth(12)
-          }}
-          onPress={() => {
-            navigation.goBack()
-          }}>
-          <Image source={ImagesPath.signUp.backIcon}
-            style={{
-              resizeMode: 'contain',
-              height: Utils.ScreenWidth(4.8),
-              width: Utils.ScreenWidth(5.8),
-            }} />
-        </TouchableOpacity>
+                          style={{
+                              marginLeft: Utils.ScreenWidth(3),
+                              marginTop: Utils.ScreenHeight(0),
+                              alignItems: 'center',
+                              elevation: 7,
+                              backgroundColor: '#fff',
+                              borderRadius: 8,
+                              justifyContent: 'center',
+                              top: Utils.ScreenHeight(-3),
+                              width: Utils.ScreenWidth(12),
+                              height: Utils.ScreenHeight(6),}}
+                          onPress={() => {
+                              navigation.goBack()
+                          }}>
+                          <Image source={ImagesPath.signUp.backIcon} 
+                          style={{
+                          resizeMode: 'contain',
+                          height: Utils.ScreenWidth(4.8),
+                          width: Utils.ScreenWidth(5.8),}} />
+                      </TouchableOpacity>
 
         {/* <View style = {{ top: Utils.ScreenHeight(-1), marginLeft: Utils.ScreenWidth(3)}}>
               <Text style = {{ color: colors.black, fontWeight: 600, fontSize: 18 }}>Personal Details</Text>
@@ -150,7 +151,7 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             </View> */}
 
         <View style={{ marginLeft: Utils.ScreenWidth(3), flexDirection: 'row' }}>
-          <Text style={{ color: colors.black, fontWeight: 600, fontSize: 16 }}>Add Personal Details</Text>
+          <Text style={{ color: colors.black, fontWeight: 600, fontSize: 18 }}>Add Personal Details</Text>
           <Text style={{ color: colors.red, }}> * </Text>
         </View>
 
@@ -163,8 +164,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={firstName}
             onChange={(text) => setFirstName(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black,
             }}
             placeholderTextColor={colors.grey} placeholder="Enter your first name" />
         </View>
@@ -178,7 +179,7 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={lastName}
             onChange={(text) => setLastName(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              height: Utils.ScreenHeight(6), color: colors.black, borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
               borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
             }}
             placeholderTextColor={colors.grey} placeholder="Enter your last name" />
@@ -262,8 +263,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={email}
             onChange={(text) => setEmail(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Enter Email" />
         </View>
@@ -276,8 +277,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={age}
             onChange={(text) => setAge(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Enter Your Age" />
         </View>
@@ -290,8 +291,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={courseEnrolled}
             onChange={(text) => setCourseEnrolled(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Enter course you are enrolled in" />
         </View>
@@ -304,8 +305,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={annualIncome}
             onChange={(text) => setAnnualIncome(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Enter annual income" />
         </View>
@@ -318,8 +319,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={avgGPA}
             onChange={(text) => setAvgGPA(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Enter average GPA out of 10" />
         </View>
@@ -332,8 +333,8 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
             value={interested}
             onChangeText={(text) => setInterested(text)}
             style={{
-              height: Utils.ScreenHeight(5), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
-              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)
+              height: Utils.ScreenHeight(6), borderColor: colors.grey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%',
+              borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), color: colors.black
             }}
             placeholderTextColor={colors.grey} placeholder="Add your interests/skills" />
         </View>
@@ -371,7 +372,7 @@ await fetch('https://nfc-backend-nyjt.onrender.com/api/register', {
           alignSelf: 'center',
           alignItems: 'center',
           justifyContent: 'center',
-          height: Utils.ScreenHeight(6),
+          height: Utils.ScreenHeight(7),
           marginTop: Utils.ScreenHeight(2),
           width: '92%',
         }} onPress={() => handlePress()}>
