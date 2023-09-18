@@ -115,7 +115,9 @@ const ClientHomeScreen = () => {
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
                       </TouchableOpacity>
-                      <TouchableOpacity>
+                      <TouchableOpacity
+                      onPress={()=>{navigation.navigate("AIInterview")}}
+                      >
                           <Image source={ImagesPath.LegalBridge.AIinterview} style={{height:Utils.ScreenHeight(8),
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
@@ -140,7 +142,7 @@ const ClientHomeScreen = () => {
 
                 <View>
                   <Text style={{fontSize:Utils.ScreenHeight(1.8),fontWeight:450}}>TODAY'S INTERVIEW</Text>
-                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5)}}>Interview with {'\n'}Mr Mukesh Ambani</Text>
+                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5), color: colors.black}}>Interview with {'\n'}Mr Mukesh Ambani</Text>
                   <TouchableOpacity 
                   onPress={()=>{navigation.navigate("VideoCall")}}
                   style={{alignSelf:"center", marginTop:Utils.ScreenHeight(1)

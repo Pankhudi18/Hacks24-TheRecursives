@@ -23,6 +23,7 @@ import EligibilityScholarship from '../screens/Eligibility/EligibilityScholarshi
 import ScholarshipDetails from '../screens/ScholarshipDetails.js/ScholarshipDetails';
 import PlayQuiz from '../screens/Quizes/PlayQuiz';
 import financialAid from '../screens/FinancialAid/financialAid';
+import AIInterview from '../screens/AIInterview/AIInterview';
 
 
 
@@ -63,6 +64,7 @@ function Navigation() {
                 <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
                 <Stack.Screen name="OCR" component={OCR} />
                 <Stack.Screen name="PlayQuiz" component={PlayQuiz} />
+                <Stack.Screen name="AIInterview" component={AIInterview} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />

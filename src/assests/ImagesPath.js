@@ -120,6 +120,11 @@ const ImagesPath = {
         drug : require('./images/home/drug.jpg'),
         pending : require('./images/home/pending.jpg'),
         scholarship: require('./images/home/Scholarship1.png'),
+        first_question: require('./images/home/first_question.mp4'),
+        second_question: require('./images/home/second_question.mp4'),
+        third_question: require('./images/home/third_question.mp4'),
+      
+        
         // selected : require('./images/home/selected.jpg'),
     },
     earning:{
