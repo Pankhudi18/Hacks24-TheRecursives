@@ -72,7 +72,7 @@ function ClientTabNavigator() {
                     headerTitle: "",
                 headerLeft: (title) => {
                     return (
-                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Scholify!!</Text>
+                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>CareerCrafter14156+3</Text>
                     )
                 },
                 headerRight: () => {

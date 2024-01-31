@@ -8,6 +8,8 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
 
 
 
+
+
 console.disableYellowBox = true;
 
 function App() {

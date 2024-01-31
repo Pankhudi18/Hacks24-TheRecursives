@@ -74,7 +74,9 @@ const AIInterview = () => {
     return (
         <View style={{ flex: 1, }}>
                 <View style={{ height: Utils.ScreenHeight(30), width: '90%', alignSelf: 'center', borderRadius: 10, borderWidth: 1, marginVertical: 20, padding: 20 }}>
-                    <Text style={{ color: 'black', fontSize: 16 }}>{data}</Text>
+                    <Text style={{ color: 'black', fontSize: 16 }}>{data} The confidence level was good , but you need to work upon your fluency.
+                    give More Interview to get detailed analysis.
+                    </Text>
                 </View>
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                 <TouchableOpacity onPress={() => navigation.navigate('test')} style={{ height: Utils.ScreenHeight(7), width: '80%', alignSelf: 'center', justifyContent: 'center', alignItems: 'center', backgroundColor: colors.primary, marginVertical: Utils.ScreenHeight(2), borderRadius: 5 }}>
