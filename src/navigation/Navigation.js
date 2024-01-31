@@ -25,21 +25,14 @@ import PlayQuiz from '../screens/Quizes/PlayQuiz';
 import AIInterview from '../screens/AIInterview/AIInterview';
 
 
-
-
-
-
-
-
 const Stack = createNativeStackNavigator();
 
 function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Watch"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
-                <Stack.Screen name = "Notification" component = {Notification}/>
                  <Stack.Screen name="Splash" component={Splash} />
                  <Stack.Screen name="AcademicDetails" component={AcademicDetails} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -52,7 +45,7 @@ function Navigation() {
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
                 <Stack.Screen name="test" component={test} />
                 <Stack.Screen name="Register" component={Register} />
-                <Stack.Screen name="financialAid" component={financialAid} />
+                {/* <Stack.Screen name="financialAid" component={financialAid} /> */}
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 {/* Client screens */}
@@ -67,10 +60,7 @@ function Navigation() {
                 <Stack.Screen name="AIInterview" component={AIInterview} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
-                name="ClientTabNavigator" component={ClientTabNavigator} />
-                
-
-                
+                name="ClientTabNavigator" component={ClientTabNavigator} />                
             </Stack.Navigator>
         </NavigationContainer>
     );
