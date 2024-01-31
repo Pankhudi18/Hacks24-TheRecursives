@@ -45,6 +45,7 @@ function Navigation() {
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
                 <Stack.Screen name="test" component={test} />
                 <Stack.Screen name="Register" component={Register} />
+                {/* <Stack.Screen name="financialAid" component={financialAid} /> */}
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 {/* Client screens */}

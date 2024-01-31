@@ -18,37 +18,35 @@ const EligibilityScholarship = (props) => {
 
     const bulletPoints = [
         "Belong to the minority community (Muslims, Sikhs, Christians, Buddhists, Jains, and Zoroastrians/Parsis)",
-        "Be studying in Class 1 to 10 in India in a government or private school including residential Government institutes and eligible private institutes selected and notified in a transparent manner by the concerned State Government and Union Territory Administration",
+        "Be studying in Class 1 to 10 in India in a government or private school including residential Government.",
         "Have secured at least 50% marks in the previous final examination",
         "Have a family income of not more than INR 1 lakh per annum from all sources",
       ];
 
       const requiredDocuments = [
-        "Students' passport-size photograph",
         "Residential/domicile certificate",
-        "Verification Form to be provided by the institution",
         "Fee receipt of the current course year",
         "Income certificate issued by the competent authority in the State/UT Government",
-        "A self-certified community certificate from the applicant who has attained 18 years of age (Note - For minors/below 18 years of age the community certificate certified by a parent/guardian is required.)",
-        "Self-attested marksheet indicating that the applicant has secured not less than 50% marks in the last qualifying exam at a higher secondary/graduation level",
-        "Bank account number of the student with the IFSC Code of the bank branch (Note - The students who do not have their own bank account, parents/guardian can provide their own account details).",
         "Aadhaar number of the student and if Aadhaar is not available then bonafide student certificate from the school/institute and scanned copies of bank passbook and Aadhaar enrolment ID (if applied for Aadhaar)",
         "Bonafide student certificate from School/Institute (Note - If school/institute is located in a State/UT different from the domicile State/UT of the applicant)",
       ];
 
       const renderItem = ({ item }) => (
-        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(2), marginTop: Utils.ScreenHeight(2)}}>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), marginTop: Utils.ScreenHeight(1) }}>{'\u2022'}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, borderRadius: 8, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(0), marginTop: Utils.ScreenHeight(2)}}>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginLeft: Utils.ScreenWidth(2), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(2) }}>{'\u2022'}</Text>
           <View style ={{marginRight: Utils.ScreenWidth(2)}}>
-          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(1), marginTop: Utils.ScreenHeight(1) }}>{item}</Text>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(2), marginTop: Utils.ScreenHeight(1), maxWidth: '96%', marginBottom: Utils.ScreenHeight(1) }}>{item}</Text>
           </View>
         </View>
       );
 
       const renderItemm = ({ item }) => (
-        <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: colors.grey, marginTop: 5 }}>{'\u2022'}</Text>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: colors.grey, marginTop: 5, marginLeft: 5 }}>{item}</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', backgroundColor: colors.secondary, borderRadius: 8, marginHorizontal: Utils.ScreenWidth(2), marginBottom: Utils.ScreenHeight(0), marginTop: Utils.ScreenHeight(2)}}>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginLeft: Utils.ScreenWidth(2), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(2) }}>{'\u2022'}</Text>
+          <View style ={{marginRight: Utils.ScreenWidth(2)}}>
+          <Text style={{ fontSize: 13, fontWeight: '400', color: colors.grey, marginHorizontal: Utils.ScreenWidth(2), marginTop: Utils.ScreenHeight(1), maxWidth: '96%', marginBottom: Utils.ScreenHeight(1) }}>{item}</Text>
+          </View>
+
         </View>
       );
       

@@ -24,7 +24,7 @@ function loginclient(props) {
     const [isChecked, setIsChecked] = useState(true);
 
 
-    const signInApi = () => {
+    const signInApi = async() => {
         if (!number) {
             // alert('Please enter your phone number');
             Helper.showToast('Please enter a valid number')
@@ -50,39 +50,56 @@ function loginclient(props) {
             return;
         }
         // navigation.navigate('OtpScreen')
-        let formdata = new FormData();
-        formdata.append('phone', number);
-        formdata.append('country_code', '91');
-        formdata.append('action', 'login');
-        const body ={
-            "mobile_no": number,
-            "action":   "login",
-        }
-        // showLoader(true)
-        console.log('body ', formdata);
+        
+        // const body ={
+        //     "mobile_no": 8237856995,
+        //     "action":   "login",
+        // }
+        // // showLoader(true)
+        // console.log('body ', body);
+        let headersList = {
+            "Accept": "/",
+            "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+            "Content-Type": "application/json"
+           }
+           
+           let bodyContent = JSON.stringify({
+             "phone":8237856995,
+             "otp":9180
+           });
+           
+           let response = await fetch("https://uat.onehealthassist.com/otp", { 
+             method: "POST",
+             body: bodyContent,
+             headers: headersList
+           });
+           
+           let data = await response.text();
+           console.log(data);
+           navigation.navigate("Verifyotpclient")
 
-        Helper.makeRequest({ url: ApiUrl.generateotp, data: body, method: "POST" }).then((data) => {
-            hideLoader(false)
-            console.log('-----------res:: ', data);
-            navigation.navigate("Verifyotpclient",{phno:number})
-            if (data.status === "success") {
+        // Helper.makeRequest({ url: ApiUrl.generateotp, data: body, method: "POST" }).then((data) => {
+        //     hideLoader(false)
+        //     console.log('-----------res:: ', data);
+        //     navigation.navigate("Verifyotpclient",{phno:number})
+        //     if (data.status === "success") {
                 
-                Helper.showToast(data.message)
+        //         Helper.showToast(data.message)
 
-               // Helper.showToast(data.message);
+        //        // Helper.showToast(data.message);
                 
               
-            } else {
-                alert(data.message)
-              //  Helper.showToast(data.message)
-                hideLoader(false)
-            }
-            // Helper.showToast(data.message)
-        }).catch(err => {
-            console.log("----err::: ", err)
-            // Helper.showToast(err.message)
-            hideLoader(false)
-        })
+        //     } else {
+        //         alert(data.message)
+        //       //  Helper.showToast(data.message)
+        //         hideLoader(false)
+        //     }
+        //     // Helper.showToast(data.message)
+        // }).catch(err => {
+        //     console.log("----err::: ", err)
+        //     // Helper.showToast(err.message)
+        //     hideLoader(false)
+        // })
 
         
     }

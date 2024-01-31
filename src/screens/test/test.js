@@ -1,4 +1,4 @@
-// import { View, Text } from 'react-native'
+
 // import React, { useState } from 'react'
 // import axios from 'axios'
 
@@ -191,11 +191,11 @@ function App() {
         startState &&
         <View style={styles.video}>
           <VideoPlayer
-            video={counter === 1 ? ImagesPath.home.firstQuestion : counter === 2 ? ImagesPath.home.secondQuestion : counter === 3 ? ImagesPath.home.thirdQuestion : null}
+            video={counter === 1 ? ImagesPath.home.first_question : counter === 2 ? ImagesPath.home.second_question : counter === 3 ? ImagesPath.home.third_question : null}
             videoWidth={100}
             autoplay
             videoHeight={100}
-            thumbnail={counter === 1 ? ImagesPath.home.firstQuestion : counter === 2 ? ImagesPath.home.secondQuestion : counter === 3 ? ImagesPath.home.thirdQuestion : null}
+            thumbnail={counter === 1 ? ImagesPath.home.first_question : counter === 2 ? ImagesPath.home.second_question : counter === 3 ? ImagesPath.home.third_question : null}
             disableSeek
           />
         </View>

@@ -73,8 +73,10 @@ const PlayQuiz = (props) => {
         const raw = {
             "scholarship_title":data?.title,
             "funding":data?.funds,
-            "file":"url",
-            "summary":summary
+            "file":"https://3968-203-212-25-251.ngrok-free.app/static/output/all_dog_words.png",
+            "summary":summary,
+            "user_id": "6504e0754312a4f26f9616fa",
+            "status":"Pending"
         }
         myHeaders.append("Content-Type", "application/json");
         var requestOptions = {
@@ -88,7 +90,7 @@ const PlayQuiz = (props) => {
         .then(result => {
             
             console.log("response:",result._id)
-            Helper.setData("appnid", result._id)
+            Helper.setData('appnid', result._id)
             alert("Application submitted")
             navigation.navigate("ClientHomeScreen")
         }
@@ -172,7 +174,7 @@ const PlayQuiz = (props) => {
             }}>
                 <TouchableOpacity
                 style={{
-                    backgroundColor: 'purple',
+                    backgroundColor: colors.primary,
                     height: 50,
                     width: 100,
                     borderRadius: 10,
@@ -208,14 +210,14 @@ const PlayQuiz = (props) => {
                     }} onPress={() => {
                       submit()
                     }}>
-                        <Text style={{ color: '#fff' }}> Submit Your Aplication</Text>
+                        <Text style={{ color: '#fff' }}> Submit </Text>
 
                     </TouchableOpacity>
 
                 ) : (
                     <TouchableOpacity
         style={{
-            backgroundColor: 'purple',
+            backgroundColor: colors.primary,
             height: 50,
             width: 100,
             borderRadius: 10,

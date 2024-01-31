@@ -124,6 +124,11 @@ const ImagesPath = {
         thirdQuestion: require('./images/home/third_question.mp4'),
         pending : require('./images/home/pending.jpg'),
         scholarship: require('./images/home/Scholarship1.png'),
+        first_question: require('./images/home/first_question.mp4'),
+        second_question: require('./images/home/second_question.mp4'),
+        third_question: require('./images/home/third_question.mp4'),
+      
+        
         // selected : require('./images/home/selected.jpg'),
     },
     earning:{
@@ -208,6 +213,12 @@ const ImagesPath = {
         schloarapplication: require('./images/LegalBridge/schloarapplication.png'),
         AIinterview: require('./images/LegalBridge/AIinterview.png'),
         scholar: require('./images/LegalBridge/scholar.jpeg'),
+        schoimg: require('./images/LegalBridge/schoimg.jpeg'),
+        ud1: require('./images/LegalBridge/ud1.png'),
+        ud2: require('./images/LegalBridge/ud2.png'),
+        ud3: require('./images/LegalBridge/ud3.png'),
+        courses: require('./images/LegalBridge/courses.png'),
+        
 
 
     }

@@ -269,7 +269,7 @@ function OtpScreen(props) {
                     </View>
                     <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
                         <Text style={[styles.Resend, { marginHorizontal: 2 }]}>{'Did not recieved OTP ?'}</Text>
-                        <Text onPress={()=>navigation.navigate("TabNavigator")} style={[styles.Resend, { color: colors.primary }]}>Resend OTP</Text>
+                        <Text onPress={()=>navigation.navigate("ClientTabNavigator")} style={[styles.Resend, { color: colors.primary }]}>Resend OTP</Text>
                     </View>
                     <View style={{ marginTop: Utils.ScreenWidth(7), }}>
                         <TouchableOpacity

@@ -37,7 +37,7 @@ const OCR = (props) => {
         formData.append('search_word', "agrees");
         setloader(true)
         axios
-          .post('http://127.0.0.1:5000/api/ocr', formData, {
+          .post('https://3968-203-212-25-251.ngrok-free.app/api/ocr', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -65,7 +65,7 @@ const OCR = (props) => {
           {loader ? (
             <View style={{ alignItems: 'center', justifyContent:"center", flex:1}}>
               <ActivityIndicator size="large" color="#0000ff" />
-              <Text>Please wait till we analyse your document...</Text>
+              <Text style = {{color: colors.black}}>Please wait till we analyse your document...</Text>
             </View>
           ) : (
             <View>
@@ -81,7 +81,7 @@ const OCR = (props) => {
                     
                   
              </View>
-            <Text style={{marginHorizontal:Utils.ScreenWidth(2), alignSelf:"center", fontSize:Utils.ScreenHeight(1.8)}}>Upload your essay for applying for the scholarship</Text>
+            <Text style={{marginHorizontal:Utils.ScreenWidth(2), alignSelf:"center", fontSize:Utils.ScreenHeight(1.8), color: colors.black}}>Upload your essay for applying for the scholarship</Text>
     
                        
                             
@@ -104,7 +104,7 @@ const OCR = (props) => {
                         </View>
                         <View style={{marginHorizontal:Utils.ScreenWidth(5), marginTop:Utils.ScreenHeight(3)}}>
                             <Text style={{fontSize:Utils.ScreenHeight(2), fontWeight:500}}>Here's a summary of the above document</Text>
-                            <Text style={{marginTop:Utils.ScreenHeight(1)}} >
+                            <Text style={{marginTop:Utils.ScreenHeight(1), color:colors.black}} >
                                 {summary}
                             </Text>
                         </View>

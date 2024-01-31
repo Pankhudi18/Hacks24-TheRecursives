@@ -35,7 +35,7 @@ const ClientHomeScreen = () => {
     }
 
     axios
-      .post('http://127.0.0.1:5000/api/recommend', body, {
+      .post('https://3968-203-212-25-251.ngrok-free.app/api/recommend', body, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -67,12 +67,12 @@ const ClientHomeScreen = () => {
             >
                 <View style={{flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
                     <View>
-                        <Image source={ImagesPath.LegalBridge.scholar}
-                            style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), resizeMode: "contain" , marginRight:Utils.ScreenWidth(2)}} />
+                        <Image source={ImagesPath.LegalBridge.schoimg}
+                            style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), borderRadius: 8, resizeMode: "contain" , marginRight:Utils.ScreenWidth(2)}} />
                     </View>
                     <View style={{flex:1, justifyContent:"space-evenly"}}>
                         <Text style={{fontSize:12, color:colors.primarydark, fontWeight:800}}> {item.funds}  </Text>
-                        <Text style={{fontSize:15, fontWeight:400}}> {item.title} </Text>
+                        <Text style={{fontSize:14, fontWeight:400, color: colors.black}}> {item.title} </Text>
                         <Text style={{fontSize:12, color:colors.grey, fontWeight:300}}>{item.days_until_deadline} days remaning </Text>
                        
                     </View>
@@ -95,7 +95,7 @@ const ClientHomeScreen = () => {
                     <TextInput
                         value={searchText}
                         onChange={(text) => setSearchtext(text)}
-                        style={{ height: Utils.ScreenHeight(5), borderColor: "#D8D8D8", paddingHorizontal: Utils.ScreenWidth(3), width: Utils.ScreenWidth(55), borderRadius: 5 }}
+                        style={{ height: Utils.ScreenHeight(5), borderColor: "#D8D8D8", paddingHorizontal: Utils.ScreenWidth(3), width: Utils.ScreenWidth(55), borderRadius: 5, color: colors.black }}
                         placeholderTextColor={'grey'} placeholder="Search" />
                     <TouchableOpacity style={{ paddingHorizontal: 10 }}>
                         <Image style={{ height: Utils.ScreenHeight(3), width: Utils.ScreenHeight(3), resizeMode: 'contain', tintColor: colors.blackdark }} source={ImagesPath.home.filter_icon} />
@@ -105,7 +105,7 @@ const ClientHomeScreen = () => {
 
                 <View style={{ marginTop: Utils.ScreenHeight(3), marginHorizontal:Utils.ScreenWidth(4)}}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Quick Tabs</Text>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 16, fontWeight: 800, marginBottom: Utils.ScreenHeight(1.5), color: colors.black }}>Quick Tabs</Text>
                         <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>View All</Text>
                     </View>
                     
@@ -115,7 +115,9 @@ const ClientHomeScreen = () => {
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
                       </TouchableOpacity>
-                      <TouchableOpacity onPress={() => navigation.navigate('AIInterview')}>
+                      <TouchableOpacity
+                      onPress={()=>{navigation.navigate("AIInterview")}}
+                      >
                           <Image source={ImagesPath.LegalBridge.AIinterview} style={{height:Utils.ScreenHeight(8),
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
@@ -140,7 +142,7 @@ const ClientHomeScreen = () => {
 
                 <View>
                   <Text style={{fontSize:Utils.ScreenHeight(1.8),fontWeight:450}}>TODAY'S INTERVIEW</Text>
-                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5)}}>Interview with {'\n'}Mr Mukesh Ambani</Text>
+                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5), color: colors.black}}>Interview with {'\n'}Mr Mukesh Ambani</Text>
                   <TouchableOpacity 
                   onPress={()=>{navigation.navigate("VideoCall")}}
                   style={{alignSelf:"center", marginTop:Utils.ScreenHeight(1)
@@ -155,7 +157,7 @@ const ClientHomeScreen = () => {
                 </View>
                 <View style={{ marginTop: Utils.ScreenHeight(3),marginHorizontal: Utils.ScreenWidth(4) }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Recommendations</Text>
+                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5), color: colors.black }}>Recommendations</Text>
 
                     </View>
                     <FlatList
