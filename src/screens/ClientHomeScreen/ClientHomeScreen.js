@@ -115,7 +115,7 @@ const ClientHomeScreen = () => {
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        
                       </TouchableOpacity>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={() => navigation.navigate('AIInterview')}>
                           <Image source={ImagesPath.LegalBridge.AIinterview} style={{height:Utils.ScreenHeight(8),
                             borderWidth:1,borderColor:colors.grey2, borderRadius:5,
                             width:Utils.ScreenWidth(44), resizeMode:"contain"}}/>                        

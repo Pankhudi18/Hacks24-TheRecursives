@@ -7,8 +7,8 @@
 //   const apikey ='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'
 //   const apiUrl= 'https://api.openai.com/v1/completions'
 //   const [textInput, setTextInput] = useState('');
-  
-  
+
+
 //   const client = axios.create({
 //       headers:{
 //           Authorization: "Bearer "+apikey,
@@ -56,7 +56,8 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Image
+  Image,
+  ActivityIndicator
 } from 'react-native';
 import { useCameraDevices } from 'react-native-vision-camera';
 import ImagesPath from '../../assests/ImagesPath';
@@ -64,6 +65,7 @@ import { Utils, colors } from '../../contants';
 import VideoPlayer from 'react-native-video-player'
 import { RNCamera } from 'react-native-camera';
 import Voice from '@react-native-voice/voice';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 function App() {
   const devices = useCameraDevices()
@@ -79,6 +81,9 @@ function App() {
   const [partialResults, setPartialResults] = useState([]);
   const [startState, setStartState] = useState(false)
   const [counter, setCounter] = useState(1)
+  const [loaderVisible, setLoaderVisible] = useState(false)
+  const [resultData, setResultData] = useState()
+  const navigation = useNavigation()
 
   console.log("result>>>>", results);
   console.log("Counter>>>>", counter);
@@ -109,11 +114,18 @@ function App() {
     setError(JSON.stringify(e.error));
   };
 
-  const onSpeechResults = (e) => {
+  const onSpeechResults = async (e) => {
     console.log('onSpeechResults: ', e);
     const newResult = { id: Date.now().toString(), value: e.value[0] };
     const updatedResults = [...results, newResult];
     setResults(updatedResults);
+    setLoaderVisible(true)
+    await fetch('https://nfc-backend-nyjt.onrender.com/analyzeQuestion', {
+      method: 'POST',
+      body: {
+        value: results
+      }
+    }).then(res => res.text()).then(data => { console.log("DATA>>>>", data); setResultData(JSON.parse(data)); setLoaderVisible(false) })
     setCombinedResults(updatedResults.map(result => result.value));
     Voice.start();
     setRefse(!refse)
@@ -147,15 +159,24 @@ function App() {
   };
 
   const handleQuestion = () => {
-     if (counter <= 3) {
+    if (counter <= 3) {
       return setCounter(counter + 1)
-     } 
-     setCounter()
+    }
+    setCounter()
   }
+  console.log("RESULT DATA>>>>", resultData);
 
   if (device == null) return <Text>Device Null</Text>
   return (
     <View>
+      {
+        loaderVisible &&
+        <View style={{ alignItems: 'center', justifyContent: "center", flex: 1 }}>
+          <ActivityIndicator size="large" color="#0000ff" />
+          <Text>Please wait till we analyse your response...</Text>
+        </View>
+      }
+
       <View style={{ height: Utils.ScreenHeight(85) }}>
         <RNCamera
           style={styles.camera}
@@ -163,8 +184,11 @@ function App() {
           captureAudio={false}
         />
       </View>
+      <TouchableOpacity onPress={() => navigation.navigate('AIInterview', { data: resultData })} style={{ position: 'absolute', top: 30, left: 20, width: '11%', height: 40, backgroundColor: 'white', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+        <Image source={ImagesPath.signUp.backIcon} style={{ width: 20, height: 20, resizeMode: 'contain' }} />
+      </TouchableOpacity>
       {
-        startState && 
+        startState &&
         <View style={styles.video}>
           <VideoPlayer
             video={counter === 1 ? ImagesPath.home.firstQuestion : counter === 2 ? ImagesPath.home.secondQuestion : counter === 3 ? ImagesPath.home.thirdQuestion : null}
@@ -176,7 +200,7 @@ function App() {
           />
         </View>
       }
-      <TouchableOpacity onPress={handleQuestion} style={[styles.recordButton, { bottom: 90, backgroundColor: colors.chat, left: 30, width: '35%' }]}>
+      <TouchableOpacity onPress={handleQuestion} style={[styles.recordButton, { bottom: 90, backgroundColor: colors.chat, left: 10, width: '40%' }]}>
         <Text style={styles.recordButtonText}>Next Question</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setStartState(true)} style={[styles.recordButton, { bottom: 90, backgroundColor: 'green', right: 120, width: '22%' }]}>
@@ -188,7 +212,7 @@ function App() {
       <Text style={{ color: 'black', position: 'relative', bottom: 30, left: 30 }}>Answers:</Text>
       {results.map(result => (
         <View key={result.id}>
-          <Text style={{ color: 'grey', fontSize: 16, position: 'relative', bottom: 20, left: 30}}> => {result.value}</Text>
+          <Text style={{ color: 'grey', fontSize: 16, position: 'relative', bottom: 20, left: 30 }}> => {result.value}</Text>
         </View>
       ))}
     </View>
