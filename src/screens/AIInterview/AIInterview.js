@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Utils, colors } from '../../contants';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import PushNotification from 'react-native-push-notification'
 import moment, { min } from 'moment';
 
 const AIInterview = () => {

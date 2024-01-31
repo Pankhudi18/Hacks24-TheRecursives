@@ -15,6 +15,7 @@ import ClientProfileScreen from '../screens/ClientProfileScreen/ClientProfileScr
 import Prepare from '../screens/Prepare/Prepare';
 import Track from '../screens/Track/Track';
 import Appli_scholarship from '../screens/ApplicationStatus/Appli_scholarship';
+import Courses from '../screens/Prepare/Prepare';
 
 
 
