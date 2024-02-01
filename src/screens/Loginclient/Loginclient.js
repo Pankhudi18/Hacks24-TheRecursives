@@ -12,7 +12,7 @@ import ImagesPath from "../../assests/ImagesPath";
 // import { strings } from "../LanguageScreen/StringsOfLanguages";
 // import { Toast } from "react-native-toast-message/lib/src/Toast";
 
-function loginclient(props) {
+function Loginclient(props) {
     const { navigation } = props;
 
     const [number, setNumber] = useState('');
@@ -126,7 +126,7 @@ function loginclient(props) {
                         <Image source={ImagesPath.signUp.backIcon} style={styles.backIconCss} />
                     </TouchableOpacity>
                     <View style={{ alignSelf: 'center', width: '70%', alignItems: 'center' }}>
-                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.logo_primary} />
+                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.DecorLogo} />
                     </View>
                 </View>
                 <View style={styles.boxCss}>
@@ -181,4 +181,4 @@ function loginclient(props) {
     )
 }
 
-export default loginclient;
+export default Loginclient;

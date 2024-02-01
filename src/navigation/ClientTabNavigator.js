@@ -16,6 +16,10 @@ import Prepare from '../screens/Prepare/Prepare';
 import Track from '../screens/Track/Track';
 import Appli_scholarship from '../screens/ApplicationStatus/Appli_scholarship';
 import Courses from '../screens/Prepare/Prepare';
+import DecorHome from '../screens/DecorHome/DecorHome';
+import DesignerList from '../screens/DesignerList/DesignerList';
+import HomeDesign from '../screens/HomeDesign/HomeDesign';
+import Chatbot from '../screens/ChatBot/ChatBot';
 
 
 
@@ -67,49 +71,49 @@ function ClientTabNavigator() {
             }}>
             <Tab.Screen
                 // Financial aid
-                name="ClientHomeScreen"
-                component={ClientHomeScreen}
+                name="DecorHome"
+                component={DecorHome}
                 options={{
                     headerTitle: "",
-                headerLeft: (title) => {
-                    return (
-                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>CareerCrafter14156+3</Text>
-                    )
-                },
-                headerRight: () => {
-                    return (
-                        <View style={{}}>
-                            <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
-                                <TouchableOpacity
+                // headerLeft: (title) => {
+                //     return (
+                //         <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>CareerCrafter14156+3</Text>
+                //     )
+                // },
+                // headerRight: () => {
+                //     return (
+                //         <View style={{}}>
+                //             <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
+                //                 <TouchableOpacity
 
-                                >
-                                    <Image source={ImagesPath.LegalBridge.bell} style={{
-                                        resizeMode: 'contain',
-                                        tintColor: colors.blackdark,
+                //                 >
+                //                     <Image source={ImagesPath.LegalBridge.bell} style={{
+                //                         resizeMode: 'contain',
+                //                         tintColor: colors.blackdark,
 
 
-                                        height: Utils.ScreenWidth(6),
-                                        width: Utils.ScreenWidth(6),
-                                        marginRight: Utils.ScreenWidth(6)
-                                    }} />
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        navigation.navigate("ClientSettings")
-                                    }}>
-                                    <Image source={ImagesPath.LegalBridge.settings} style={{
-                                        resizeMode: 'contain',
-                                        tintColor: colors.blackdark,
-                                        height: Utils.ScreenWidth(6),
-                                        width: Utils.ScreenWidth(6),
-                                    }} />
-                                </TouchableOpacity>
-                            </View>
+                //                         height: Utils.ScreenWidth(6),
+                //                         width: Utils.ScreenWidth(6),
+                //                         marginRight: Utils.ScreenWidth(6)
+                //                     }} />
+                //                 </TouchableOpacity>
+                //                 <TouchableOpacity
+                //                     onPress={() => {
+                //                         navigation.navigate("ClientSettings")
+                //                     }}>
+                //                     <Image source={ImagesPath.LegalBridge.settings} style={{
+                //                         resizeMode: 'contain',
+                //                         tintColor: colors.blackdark,
+                //                         height: Utils.ScreenWidth(6),
+                //                         width: Utils.ScreenWidth(6),
+                //                     }} />
+                //                 </TouchableOpacity>
+                //             </View>
 
-                        </View>
-                    )
-                },
-                    headerShown: true,
+                //         </View>
+                //     )
+                // },
+                    headerShown: false,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -126,8 +130,8 @@ function ClientTabNavigator() {
             />
 
             <Tab.Screen
-                name="ClientSearchScreen"
-                component={ClientSearchScreen}
+                name="DesignerList"
+                component={DesignerList}
                 options={{
                     headerTitle: "",
                 headerLeft: (title) => {
@@ -168,13 +172,13 @@ function ClientTabNavigator() {
                         </View>
                     )
                 },
-                    headerShown: true,
+                    headerShown: false,
                     tabBarLabel: '',
                     
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                                title="Search"
+                                title="Designer"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.home.Search_primary}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -185,8 +189,8 @@ function ClientTabNavigator() {
                 }}
             />
             <Tab.Screen
-                name="My Applications"
-                component={Appli_scholarship}
+                name="Home Design"
+                component={HomeDesign}
                 options={{
                     headerTitle: "",
                 headerLeft: (title) => {
@@ -227,7 +231,7 @@ function ClientTabNavigator() {
                         </View>
                     )
                 },
-                    headerShown: true,
+                    headerShown: false,
                     tabBarLabel: 'My Applications',
                     
                     tabBarIcon: ({ focused }) => {
@@ -244,12 +248,12 @@ function ClientTabNavigator() {
                 }}
             />
             <Tab.Screen
-                name="Prepare"
-                component={Prepare}
+                name="ChatBot"
+                component={Chatbot}
                 options={{
                     headerLeft: (title) => {
                         return (
-                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Courses</Text>
+                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Chat Bot</Text>
                         )
                     },
                     headerRight: () => {
@@ -285,12 +289,12 @@ function ClientTabNavigator() {
                             </View>
                         )
                     },
-                        headerShown: true,
+                        headerShown: false,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                                title="Courses"
+                                title="Chat Bot"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.LegalBridge.courses}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -332,7 +336,7 @@ function ClientTabNavigator() {
                             </View>
                         )
                     },
-                        headerShown: true,
+                        headerShown: false,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (

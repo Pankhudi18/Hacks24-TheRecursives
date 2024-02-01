@@ -1,6 +1,17 @@
 const ImagesPath = {
     splash: {
         bgImg: require('./images/splash/Updated_Splash.png'),
+        SplashIt: require('./images/splash/SplashIt.jpg'),
+    },
+    Decor: {
+        Intro: require('./images/Decor/IntroScreen.jpg'),
+        Couch: require('./images/Decor/Couch.png'),
+        Item1: require('./images/Decor/Item1.jpg'),
+        Item2: require('./images/Decor/Item2.jpg'),
+        Lamp: require('./images/Decor/Lamp.jpg'),
+        Chair: require('./images/Decor/Chair.jpg'),
+        Chat: require('./images/Decor/ChatImg.png'),
+        Porfolio: require('./images/Decor/Portfolio.jpg'),
     },
     language: {
         logo: require('./images/language/logo.png'),
@@ -127,6 +138,9 @@ const ImagesPath = {
         first_question: require('./images/home/first_question.mp4'),
         second_question: require('./images/home/second_question.mp4'),
         third_question: require('./images/home/third_question.mp4'),
+        DecorLogo: require('./images/home/DECORlogo.jpg'),
+        i1: require('./images/home/i1.png'),
+        i2: require('./images/home/i2.jpg'),
       
         
         // selected : require('./images/home/selected.jpg'),
@@ -139,6 +153,12 @@ const ImagesPath = {
         home_earning: require('./images/earning/home_earning.png'),
         clinic_earning: require('./images/earning/clinic_earning.png'),
         downlo_icon: require('./images/earning/downlo_icon.png'),
+        next: require('./images/earning/next.png'),
+        painting: require('./images/earning/frame.png.jpeg'),
+        mat: require('./images/earning/mat.png.jpeg'),
+        plant: require('./images/earning/vase.png.jpeg'),
+        chair: require('./images/earning/chair.png.jpeg'),
+        table: require('./images/earning/table.png.jpeg'),
     },
     sideMenu:{
         invoices_icon: require('./images/sideMenu/Invoices_primary.png'),
@@ -182,6 +202,8 @@ const ImagesPath = {
         minimise_icon: require('./images/video/minimise_icon.png'),
         more_icon_icon: require('./images/video/more_icon.png'),
         stop_video_icon: require('./images/video/stop_video.png'),
+        DIYVideo: require('./images/video/DIYVideo.mp4'),
+        Intro: require('./images/video/GettingStarted.mp4'),
 
     },
     LegalBridge:{

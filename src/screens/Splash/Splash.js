@@ -11,19 +11,27 @@ const Splash = () => {
   useEffect(()=>{
     setTimeout(() => {
       navigation.navigate("IntroScreen")
-    }, 3000);
+    }, 2000);
   },[])
   return (
-    <SafeAreaView style={{backgroundColor:colors.white}}>
-    <View style={{height:"100%", alignItems:"center", justifyContent:"center", backgroundColor:colors.white}}>
-      <Image source={ImagesPath.home.logo_primary} style={{
-        resizeMode:"contain",
-        height:Utils.ScreenHeight(35),
+
+    <View style={{height:"100%", backgroundColor:colors.white}}>
+      <Image source={ImagesPath.splash.SplashIt} style={{
+        resizeMode:"stretch",
+        height:"100%",
         width:"100%",
-        justifyContent:"center",
+        flex: 1,
         }}/>
+
+<View style = {{flexDirection: 'row', position: 'absolute', marginTop: Utils.ScreenHeight(30), justifyContent: 'center', marginHorizontal: Utils.ScreenWidth(10)}}>
+        <Text style={{color: '#6B6060', fontSize: 50, fontWeight: 900}}>
+          DECOR
+        </Text>
+        <Text style={{color: '#000', fontSize: 50, fontWeight: 900}}>
+          KEA
+        </Text>
     </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

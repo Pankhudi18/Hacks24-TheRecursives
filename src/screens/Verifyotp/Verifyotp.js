@@ -237,7 +237,7 @@ function OtpScreen(props) {
                         <Image source={ImagesPath.signUp.backIcon} style={styles.backIconCss} />
                     </TouchableOpacity>
                     <View style={{ alignSelf: 'center', width: '70%', alignItems: 'center' }}>
-                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.logo_primary} />
+                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.DecorLogo} />
                     </View>
                 </View>
                 <View style={styles.boxCss}>
@@ -277,7 +277,8 @@ function OtpScreen(props) {
                             onPress={() => 
                                 // {navigation.navigate("H")}
                                 // {navigation.navigate("TabNavigator")}
-                                otpInApi()
+                                // otpInApi()
+                                navigation.navigate('PMSocials')
                             }
                             style={{ flexDirection: 'row', justifyContent: 'center', width: Utils.ScreenWidth(90), backgroundColor: colors.primary, height: Utils.ScreenHeight(7), borderRadius: 13 }}>
                             <View style={[styles.titleViewCss, { width: Utils.ScreenWidth(45) }]}>

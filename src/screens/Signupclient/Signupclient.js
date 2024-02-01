@@ -90,7 +90,7 @@ function SignUpclient(props) {
                         <Image source={ImagesPath.signUp.backIcon} style={styles.backIconCss} />
                     </TouchableOpacity>
                     <View style={{ alignSelf: 'center', width: '70%', alignItems: 'center' }}>
-                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.logo_primary} />
+                        <Image style={[styles.logoIconCss]} source={ImagesPath.home.DecorLogo} />
                     </View>
                 </View>
                 <View style={styles.boxCss}>
